@@ -1,0 +1,21 @@
+@baseUrl = http://js-post-api.herokuapp.com/api
+
+# @name getAllStudents
+GET {{baseUrl}}/students?_page=1&_limit=10
+
+###
+
+# @name addNewStudent
+POST {{baseUrl}}/students
+Content-Type: application/json
+
+{
+    "name": "a1",
+    "age": 1,
+    "mark": 9,
+    "gender": "male",
+    "city": "hn"
+}
+
+###
+GET {{baseUrl}}/cities
