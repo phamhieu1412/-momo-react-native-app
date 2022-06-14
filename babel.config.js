@@ -10,6 +10,7 @@ module.exports = {
           src: './src',
           api: './src/api',
           features: './src/features',
+          types: './src/types',
         },
       },
     ],

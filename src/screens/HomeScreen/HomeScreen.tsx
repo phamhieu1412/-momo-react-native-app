@@ -1,14 +1,18 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React, {useEffect} from 'react';
+import {useDispatch} from 'react-redux';
 
 import Counter from '../../features/counter/Counter';
-import cityApi from 'api/cityApi';
+import {getSlides} from '../../slices/productSlice';
 
 const HomeScreen = ({navigation}: any) => {
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    cityApi.getAll().then(res => {
-      console.log('res', res);
-    });
+    dispatch(getSlides());
+    // cityApi.getAll().then(res => {
+    //   console.log('re1s', res);
+    // });
   }, []);
 
   return (
