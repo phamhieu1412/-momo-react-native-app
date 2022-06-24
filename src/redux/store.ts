@@ -3,12 +3,14 @@ import createSagaMiddleware from 'redux-saga';
 
 import rootSaga from '../redux/rootSaga';
 import counterReducer from '../features/counter/counterSlice';
+import productReducer from '../slices/productSlice';
 
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
+    product: productReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware().concat(sagaMiddleware),

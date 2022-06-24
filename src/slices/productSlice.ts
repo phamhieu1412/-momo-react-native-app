@@ -10,14 +10,14 @@ const initialState = {
   cart: [],
 };
 
-export const getSlides = createAsyncThunk('parent/cart', async () => {
+export const getSlides = createAsyncThunk('product', async () => {
   const response = await ApiClient.get('/products');
   console.log('xxx getCart response', response);
   return response.data;
 });
 
 const cartSlice = createSlice({
-  name: APP_SLICE.CART,
+  name: APP_SLICE.PRODUCT,
   initialState,
   reducers: {
     onIncrease: (state, action) => {
@@ -53,7 +53,7 @@ const cartSlice = createSlice({
     builder.addCase(getSlides.fulfilled, (state, action) => {
       state.isLoading = false;
       state.isLoadMore = false;
-      state.cart = action.payload.order;
+      // state.cart = action.payload.order;
       console.log('xxx extraReducers fulfilled', state, action);
       return state;
     });
